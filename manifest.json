@@ -1,7 +1,7 @@
 {
-	"name": "Sample Theme",
-	"version": "1.0.0",
-	"minAppVersion": "1.0.0",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md"
+  "name": "DoubleTrees Sepia",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "author": "0xWulf",
+  "authorUrl": "https://piapps.dev"
 }

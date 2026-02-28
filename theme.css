@@ -1,34 +1,78 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/*
+  DoubleTrees Sepia — Obsidian Theme (Template)
+  Palette matches 0xWulf Ghostty + DoubleTrees Sepia VS Code theme.
+
+  v0.1.0: token scaffold + minimal readable defaults
+*/
+
+:root {
+  /* --- Core parchment --- */
+  --dt-bg: #EDE4D4;
+  --dt-fg: #2D2A24;
+
+  /* --- Accent / UI --- */
+  --dt-accent: #996515;
+  --dt-selection-bg: #D4A574;
+  --dt-selection-fg: #2D2A24;
+
+  /* --- ANSI-inspired palette (Ghostty) --- */
+  --dt-red: #B83A2E;
+  --dt-green: #3D6E35;
+  --dt-yellow: #8B6914;
+  --dt-blue: #2E5A8C;
+  --dt-magenta: #7A4D8D;
+  --dt-cyan: #267878;
+
+  /* --- Neutrals --- */
+  --dt-muted: #8A8279;
+  --dt-muted-2: #6E665C;
+  --dt-shadow: #4A453E;
+
+  /* --- Minimal mapping to Obsidian tokens (we’ll expand next) --- */
+  --background-primary: var(--dt-bg);
+  --background-primary-alt: color-mix(in srgb, var(--dt-bg) 92%, var(--dt-fg));
+  --background-secondary: color-mix(in srgb, var(--dt-bg) 88%, var(--dt-fg));
+  --background-secondary-alt: color-mix(in srgb, var(--dt-bg) 84%, var(--dt-fg));
+
+  --text-normal: var(--dt-fg);
+  --text-muted: var(--dt-muted);
+  --text-faint: var(--dt-muted-2);
+
+  --interactive-accent: var(--dt-accent);
+  --interactive-accent-hover: color-mix(in srgb, var(--dt-accent) 85%, black);
+
+  --text-selection: var(--dt-selection-fg);
+  --text-selection-bg: var(--dt-selection-bg);
+
+  --link-color: var(--dt-blue);
+  --link-color-hover: color-mix(in srgb, var(--dt-blue) 80%, black);
+
+  --code-normal: var(--dt-fg);
+  --code-background: color-mix(in srgb, var(--dt-bg) 86%, var(--dt-fg));
+
+  --scrollbar-thumb-bg: color-mix(in srgb, var(--dt-fg) 25%, transparent);
+  --scrollbar-active-thumb-bg: color-mix(in srgb, var(--dt-fg) 35%, transparent);
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+/* Make selection match Ghostty feel */
+::selection {
+  background: var(--dt-selection-bg);
+  color: var(--dt-selection-fg);
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+/* Slightly stronger headings for print/screenshots */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-source-view.mod-cm6 .cm-header {
+  color: var(--dt-fg);
 }
 
-.menu {
-	padding: var(--size-2-1);
+/* Links */
+.markdown-preview-view a {
+  color: var(--link-color);
+  text-decoration-color: color-mix(in srgb, var(--link-color) 55%, transparent);
 }
-
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
-}
-
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.markdown-preview-view a:hover {
+  color: var(--link-color-hover);
 }
